@@ -16,7 +16,6 @@ import org.springframework.web.reactive.function.client.ClientResponse;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -37,7 +36,9 @@ public class AgileEngineServiceImpl implements AgileEngineService {
 
     @Scheduled(cron = "${spring.application.schedule}")
     public String loadDataBase() {
+        log.info("remove cache");
         imageRepository.deleteAll();
+        log.info("loading data in cache");
         ResponseTokenDTO responseTokenDTO = getToken();
         ResponseImagesDTO responseImagesDTO = new ResponseImagesDTO();
         ResponseImageDetailDTO responseImageDetailDto;

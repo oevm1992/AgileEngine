@@ -1,8 +1,6 @@
 package com.example.demo.controller.impl;
 
 import com.example.demo.controller.AgileEngineController;
-import com.example.demo.models.ResponseImageDetailDTO;
-import com.example.demo.models.ResponseTokenDTO;
 import com.example.demo.models.entity.Image;
 import com.example.demo.service.impl.AgileEngineServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
